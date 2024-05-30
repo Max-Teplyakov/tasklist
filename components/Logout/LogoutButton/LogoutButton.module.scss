@@ -1,0 +1,13 @@
+.logout__container {
+  display: flex;
+  gap: 20px;
+}
+
+.logout__button {
+  padding: 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
