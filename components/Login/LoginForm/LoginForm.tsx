@@ -6,6 +6,11 @@ import { useRouter } from "next/navigation";
 import { login } from "../../../store/authSlice";
 import styles from "./LoginForm.module.scss";
 
+const userEmail = process.env.NEXT_PUBLIC_USER_EMAIL;
+const userPassword = process.env.NEXT_PUBLIC_USER_PASSWORD;
+const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
+const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
+
 const LoginForm: FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,10 +42,10 @@ const LoginForm: FC = () => {
 
     if (!valid) return;
 
-    if (email === "user@user.com" && password === "12345") {
+    if (email === userEmail && password === userPassword) {
       dispatch(login(email));
       router.push("/");
-    } else if (email === "admin@admin.com" && password === "67890") {
+    } else if (email === adminEmail && password === adminPassword) {
       dispatch(login(email));
       router.push("/");
     } else {
